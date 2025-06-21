@@ -28,6 +28,19 @@ H/VSYNC:                                                          |_____________
 
 ## Repository Structure
 
+```
+.
+├── demo
+│   └── bar         # bar demo program
+├── doc
+├── LICENSE
+├── README.md
+├── rtl
+│   └── vga         # VGA RTL
+└── sim
+    └── cocotb      # cocotb simulation
+```
+
 ## Demo
 
 ### Prerequisite
