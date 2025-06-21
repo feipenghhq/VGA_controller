@@ -30,5 +30,25 @@ H/VSYNC:                                                          |_____________
 
 ## Demo
 
+### Prerequisite
+
+To run the demo program in simulation, you will need to have `cocotb` and `verilator` installed.
+
+### Bar Generation
+
+A small demo program written in verilog is also included in the repo (`demo/bar`). It shows 3 different color bar in the screen.
+
+To run the demo program in simulation:
+
+```shell
+cd sim/cocotb
+make
+```
+
+The simulation runs very slow, it needs about 2~3 minutes for the picture to be fully loaded. Here is the result:
+
+![demo](./doc/assets/demo.png)
+
+
 
 
