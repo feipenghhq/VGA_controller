@@ -38,7 +38,7 @@ module bar_top #(
 
     assign vga_start = 1'b1;
 
-    vga_sync #(1, 1, 1)   u_vga_sync(.*);
+    vga_sync #(0, 1, 1)   u_vga_sync(.*);
     bar_gen  #(RGB_WIDTH) u_bar_gen(.*);
 
 endmodule

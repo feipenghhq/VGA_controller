@@ -12,9 +12,12 @@
 
 module top
 (
-    input         CLOCK_50,    // 50 MHz
+    //input         CLOCK_50,    // 50 MHz
+    input         CLOCK_27,     // 50 MHz
 
-    input         KEY,         // Pushbutton[3:0]
+    input         KEY,          // Pushbutton[3:0]
+
+    output        TD_RESET,     // TV Decoder Reset. Low active
 
     // VGA
     output        VGA_CLK,     // VGA Clock
@@ -27,21 +30,24 @@ module top
     output [9:0]  VGA_B        // VGA Blue[9:0]
 );
 
+logic PIXEL_CLK;
 
 assign VGA_BLANK = 1'b1;
 assign VGA_SYNC  = 1'b0;
+assign VGA_CLK = ~PIXEL_CLK;
+assign TD_RESET = 1'b1;
 
 pll
 u_pll (
-    .inclk0 (CLOCK_50),
-	.c0     (VGA_CLK)
+    .inclk0 (CLOCK_27),
+	.c0     (PIXEL_CLK)
 );
 
 bar_top
     #(.RGB_WIDTH(10))
 u_bar_top
 (
-    .pixel_clk  (VGA_CLK),
+    .pixel_clk  (PIXEL_CLK),
     .reset      (~KEY),     // default is high
     .R          (VGA_R),
     .G          (VGA_G),

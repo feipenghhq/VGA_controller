@@ -2,7 +2,11 @@
 set_location_assignment PIN_G26 -to KEY
 
 # CLOCK
-set_location_assignment PIN_N2 -to CLOCK_50
+#set_location_assignment PIN_N2 -to CLOCK_50
+set_location_assignment PIN_D13 -to CLOCK_27
+
+# TD_RESET
+set_location_assignment PIN_C4 -to TD_RESET
 
 # VGA
 set_location_assignment PIN_C8 -to VGA_R[0]
